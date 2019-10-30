@@ -137,8 +137,8 @@ public class Album {
             this.SongName,
             this.band,
             this.getLength().toHours(),
-            this.getLength().toMinutes() % 60,
-            this.getLength().toSeconds() % 60);
+            this.getLength().toMinutes(),
+            this.getLength().toSeconds());
         return ts;
     }
 
