@@ -138,7 +138,7 @@ public class Album {
             this.band,
             this.getLength().toHours(),
             this.getLength().toMinutes(),
-            this.getLength().toSeconds());
+            this.getLength().toMinutes());
         return ts;
     }
 
