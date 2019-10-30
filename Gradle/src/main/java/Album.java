@@ -13,13 +13,13 @@ public class Album {
     private String              band;
     private ArrayList<Duration> songs = new ArrayList<Duration>();
 
-    /**
-     * Create a new Album object.
-     */
-    public Album() {
-        SongName = "";
-        band = "";
-    }
+//    /**
+//     * Create a new Album object.
+//     */
+//    public Album() {
+//        SongName = "";
+//        band = "";
+//    }
 
 
     /**
