@@ -131,7 +131,7 @@ public class Album {
 
     @Override
     public String toString() {
-        
+
         String ts = String.format(
             "Album [name=%s,band=%s,length=%d:%02x:%02x]",
             this.songName,
@@ -143,9 +143,6 @@ public class Album {
     }
 
 
- 
-
-
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -155,14 +152,14 @@ public class Album {
             return false;
         }
         else {
-            Album o = (Album) obj;
-            if (this.songName.equals(o.songName) &&  (this.band.equals(o.band))) {
+            Album o = (Album)obj;
+            if (this.songName.equals(o.songName)
+                && (this.band.equals(o.band))) {
                 return this.songName.equals(o.songName);
             }
             else {
                 return false;
             }
-            
 
         }
     }
