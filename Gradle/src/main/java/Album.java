@@ -144,10 +144,7 @@ public class Album {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        else if (!obj.getClass().equals(Album.class)) {
+        if (obj == null || !obj.getClass().equals(Album.class)) {
             return false;
         }
         return true;
