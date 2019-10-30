@@ -145,9 +145,9 @@ public class Album {
     @Override
     public boolean equals(Object obj) {
         if (obj == null || !obj.getClass().equals(Album.class)) {
-            return false;
+            return obj == null;
         }
-        return true;
+        return obj != null;
     }
 
 }
