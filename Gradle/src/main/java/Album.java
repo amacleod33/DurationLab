@@ -9,18 +9,17 @@ import java.time.Duration;
  */
 public class Album {
 
-    private String              SongName;
+    private String              songName;
     private String              band;
     private ArrayList<Duration> songs = new ArrayList<Duration>();
 
-//    /**
-//     * Create a new Album object.
-//     */
-//    public Album() {
-//        SongName = "";
-//        band = "";
-//    }
-
+// /**
+// * Create a new Album object.
+// */
+// public Album() {
+// SongName = "";
+// band = "";
+// }
 
     /**
      * Create a new Album object.
@@ -37,7 +36,7 @@ public class Album {
         else if (band == null) {
             throw new IllegalArgumentException("band cannot be null");
         }
-        this.SongName = name;
+        this.songName = name;
         this.band = band;
     }
 
@@ -48,7 +47,7 @@ public class Album {
      * @return The value of name for this object.
      */
     public String getName() {
-        return SongName;
+        return songName;
     }
 
 
@@ -59,7 +58,7 @@ public class Album {
      *            The new value for name.
      */
     public void setName(String name) {
-        this.SongName = name;
+        this.songName = name;
     }
 
 
@@ -134,7 +133,7 @@ public class Album {
     public String toString() {
         String ts = String.format(
             "Album [name=%s,band=%s,length=%d:%02d:%02d]",
-            this.SongName,
+            this.songName,
             this.band,
             this.getLength().toHours(),
             this.getLength().toMinutes(),
@@ -152,11 +151,8 @@ public class Album {
             return false;
         }
         else {
-            Album o = (Album)obj;
-            if (this.SongName.equals(o.SongName) && this.band.equals(o.band)) {
-                return true;
-            }
-            return false;
+            return true;
+
         }
     }
 
