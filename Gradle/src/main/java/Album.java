@@ -26,7 +26,7 @@ public class Album {
      * Create a new Album object.
      * 
      * @param name
-     *            name of albu
+     *            name of album
      * @param band
      *            name of band
      */
@@ -137,8 +137,8 @@ public class Album {
             this.SongName,
             this.band,
             this.getLength().toHours(),
-            (int) this.getLength().toMinutes(),
-            (int) this.getLength().toSeconds());
+            this.getLength().toMinutes() % 60,
+            this.getLength().toSeconds() % 60);
         return ts;
     }
 
@@ -158,6 +158,17 @@ public class Album {
             }
             return false;
         }
+    }
+
+    int a = 0;
+    /**
+     * main
+     * 
+     * @param args
+     *            arguments
+     */
+    public static void main(String[] args) {
+
     }
 
 }
