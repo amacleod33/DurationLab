@@ -131,13 +131,14 @@ public class Album {
 
     @Override
     public String toString() {
+        
         String ts = String.format(
             "Album [name=%s,band=%s,length=%d:%02x:%02x]",
             this.songName,
             this.band,
             this.getLength().toHours(),
-            (this.getLength()).toMinutes() % 60,
-            (this.getLength()).toSeconds() % 60);
+            (this.getLength()).getSeconds() * 60,
+            (this.getLength()).getSeconds() % 60);
         return ts;
     }
 
