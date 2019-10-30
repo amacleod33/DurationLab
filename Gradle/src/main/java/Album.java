@@ -2,24 +2,34 @@ import java.util.ArrayList;
 import java.time.Duration;
 
 /**
- * Write a one-sentence summary of your class here. Follow it with additional
- * details about its purpose, what abstraction it represents, and how to use it.
+ * creates album objects to show length, name, and band name of songs
  * 
- * @author
- * @version
+ * @author amacleod
+ * @version 10292019
  */
 public class Album {
 
-    private String              name;
+    private String              SongName;
     private String              band;
     private ArrayList<Duration> songs = new ArrayList<Duration>();
 
+    /**
+     * Create a new Album object.
+     */
     public Album() {
-        name = "";
+        SongName = "";
         band = "";
     }
 
 
+    /**
+     * Create a new Album object.
+     * 
+     * @param name
+     *            name of albu
+     * @param band
+     *            name of band
+     */
     public Album(String name, String band) {
         if (name == null) {
             throw new IllegalArgumentException("name cannot be null");
@@ -27,7 +37,7 @@ public class Album {
         else if (band == null) {
             throw new IllegalArgumentException("band cannot be null");
         }
-        this.name = name;
+        this.SongName = name;
         this.band = band;
     }
 
@@ -38,7 +48,7 @@ public class Album {
      * @return The value of name for this object.
      */
     public String getName() {
-        return name;
+        return SongName;
     }
 
 
@@ -49,7 +59,7 @@ public class Album {
      *            The new value for name.
      */
     public void setName(String name) {
-        this.name = name;
+        this.SongName = name;
     }
 
 
@@ -75,6 +85,11 @@ public class Album {
 
 
     // use toMinutes() % 60 to get remaining minutes
+    /**
+     * Gets full duration of album
+     * 
+     * @return full duration of album
+     */
     public Duration getLength() {
         Duration completeLength = Duration.ofMinutes(0).plusSeconds(0);
         for (int i = 0; i < songs.size(); i++) {
@@ -87,6 +102,12 @@ public class Album {
     }
 
 
+    /**
+     * Adds a song duration to song arrayList
+     * 
+     * @param length
+     *            length of a song
+     */
     public void addSong(Duration length) {
         if (length == null) {
             throw new IllegalArgumentException("length cannot be null");
@@ -95,6 +116,11 @@ public class Album {
     }
 
 
+    /**
+     * creates new list of durations
+     * 
+     * @return arraylist of all song durations
+     */
     public ArrayList<Duration> getSongs() {
         ArrayList<Duration> newList = new ArrayList<Duration>();
         for (int i = 0; i < songs.size(); i++) {
@@ -108,11 +134,11 @@ public class Album {
     public String toString() {
         String ts = String.format(
             "Album [name=%s,band=%s,length=%d:%02d:%02d]",
-            this.name,
+            this.SongName,
             this.band,
             this.getLength().toHours(),
-            this.getLength().toMinutes() % 60,
-            this.getLength().toSeconds() % 60);
+            (int) this.getLength().toMinutes() % 60,
+            (int) this.getLength().toSeconds() % 60);
         return ts;
     }
 
@@ -127,7 +153,7 @@ public class Album {
         }
         else {
             Album o = (Album)obj;
-            if (this.name.equals(o.name) && this.band.equals(o.band)) {
+            if (this.SongName.equals(o.SongName) && this.band.equals(o.band)) {
                 return true;
             }
             return false;
