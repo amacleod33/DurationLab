@@ -12,6 +12,7 @@ public class Album {
     private String              songName;
     private String              band;
     private ArrayList<Duration> songs = new ArrayList<Duration>();
+    private Duration fullLength = Duration.ofHours(0).plusMinutes(0).plusSeconds(0);
 
 // /**
 // * Create a new Album object.
@@ -97,6 +98,7 @@ public class Album {
                     .plusSeconds(songs.get(i).getSeconds() % 60);
             completeLength = completeLength.plus(fullDuration);
         }
+        fullLength = completeLength;
         return completeLength;
     }
 
@@ -135,9 +137,9 @@ public class Album {
             "Album [name=%s,band=%s,length=%d:%02d:%02d]",
             this.songName,
             this.band,
-            this.getLength().toHours(),
-            (int)this.getLength().toMinutes() % 60,
-            (int)this.getLength().toSeconds() % 60);
+            fullLength.toHours(),
+            fullLength.toMinutes() % 60,
+            fullLength.toSeconds() % 60);
         return ts;
     }
 
