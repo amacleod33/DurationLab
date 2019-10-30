@@ -160,7 +160,7 @@ public class Album {
         }
     }
 
-    int a = 0;
+
     /**
      * main
      * 
