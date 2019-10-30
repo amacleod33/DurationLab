@@ -136,18 +136,31 @@ public class Album {
             this.songName,
             this.band,
             this.getLength().toHours(),
-            this.getLength().toMinutes(),
-            this.getLength().toMinutes());
+            this.getLength().toMinutes() % 60,
+            this.getLength().toSeconds() % 60);
         return ts;
     }
 
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null || !obj.getClass().equals(Album.class)) {
-            return obj == null;
+        if (obj == null) {
+            return false;
         }
-        return obj != null;
+        else if (!obj.getClass().equals(Album.class)) {
+            return false;
+        }
+        else {
+            Album o = (Album) obj;
+            if (this.songName.equals(o.songName) &&  (this.band.equals(o.band))) {
+                return this.songName.equals(o.songName);
+            }
+            else {
+                return false;
+            }
+            
+
+        }
     }
 
 }
