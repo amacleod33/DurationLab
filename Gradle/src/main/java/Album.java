@@ -150,10 +150,7 @@ public class Album {
         else if (!obj.getClass().equals(Album.class)) {
             return false;
         }
-        else {
-            return true;
-
-        }
+        return true;
     }
 
 }
