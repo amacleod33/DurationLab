@@ -137,10 +137,13 @@ public class Album {
             this.songName,
             this.band,
             this.getLength().toHours(),
-            (this.getLength()).toMinutes() % 60,
-            (this.getLength()).toSeconds() % 60);
+            (this.getLength()).getSeconds() / 60 % 60,
+            (this.getLength()).getSeconds() % 60);
         return ts;
     }
+
+
+ 
 
 
     @Override
