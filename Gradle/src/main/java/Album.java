@@ -147,24 +147,13 @@ public class Album {
         if (obj == null) {
             return false;
         }
-        if (!obj.getClass().equals(Album.class)) {
+        else if (!obj.getClass().equals(Album.class)) {
             return false;
         }
         else {
             return true;
 
         }
-    }
-
-
-    /**
-     * main
-     * 
-     * @param args
-     *            arguments
-     */
-    public static void main(String[] args) {
-
     }
 
 }
